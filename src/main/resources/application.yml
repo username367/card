@@ -1,0 +1,24 @@
+server:
+  port: 8888
+spring:
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/testdb?useSSL=false&serverTimezone=Hongkong&characterEncoding=utf-8&autoReconnect=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  web:
+    resources:
+      static-locations: classpath:/static,classpath:/public,classpath:/resources,classpath:/META-INF/resources
+  thymeleaf:
+    cache: false
+mvc:
+  view:
+    static-path-pattern: /**
+
+mybatis:
+  mapper-locations: classpath:generator/mapper/*.xml
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
